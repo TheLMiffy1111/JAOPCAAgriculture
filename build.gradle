@@ -57,9 +57,9 @@ repositories {
     }
 }
 
-version = "1.12.2-2.2.6.71"
-group= "thelm.jaopca"
-archivesBaseName = "JAOPCA"
+version = "1.12.2-1.2.0.2"
+group= "thelm.jaopca.agriculture"
+archivesBaseName = "JAOPCAAgriculture"
 
 sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
