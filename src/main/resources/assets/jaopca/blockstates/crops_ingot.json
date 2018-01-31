@@ -1,0 +1,46 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "minecraft:cross"
+    },
+    "variants": {
+        "age": {
+            "0": {
+                "textures": { "cross": "jaopca:blocks/crops_0" }
+            },
+            "1": {
+                "textures": { "cross": "jaopca:blocks/crops_1" }
+            },
+            "2": {
+                "textures": { "cross": "jaopca:blocks/crops_2" }
+            },
+            "3": {
+                "textures": { "cross": "jaopca:blocks/crops_2" }
+            },
+            "4": {
+                "textures": { "cross": "jaopca:blocks/crops_3" }
+            },
+            "5": {
+                "textures": { "cross": "jaopca:blocks/crops_4" }
+            },
+            "6": {
+                "textures": { "cross": "jaopca:blocks/crops_4" }
+            },
+            "7": {
+                "model": "jaopca:cross_overlayed",
+                "textures": {
+                    "base": "jaopca:blocks/crops_ingot",
+                    "overlay": "jaopca:blocks/crops_ingot_overlay"
+                }
+            }
+        },
+        "inventory": [{
+            "model": "builtin/generated",
+            "transform": "forge:default-item",
+            "textures": {
+                "layer0": "jaopca:blocks/crops_ingot",
+                "layer1": "jaopca:blocks/crops_ingot_overlay"
+            }
+        }]
+    }
+}
