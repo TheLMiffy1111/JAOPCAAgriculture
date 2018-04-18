@@ -1,8 +1,6 @@
-package thelm.jaopca.agriculture;
+package thelm.jaopca.agriculture.mysticalagriculture;
 
 import java.util.Arrays;
-
-import net.minecraft.item.ItemStack;
 
 public enum EnumRecipePattern {
 

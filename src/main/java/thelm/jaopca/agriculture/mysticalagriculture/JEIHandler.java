@@ -1,4 +1,4 @@
-package thelm.jaopca.agriculture;
+package thelm.jaopca.agriculture.mysticalagriculture;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

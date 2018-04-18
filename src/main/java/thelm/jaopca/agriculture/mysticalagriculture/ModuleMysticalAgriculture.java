@@ -1,4 +1,4 @@
-package thelm.jaopca.agriculture;
+package thelm.jaopca.agriculture.mysticalagriculture;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,9 +28,7 @@ import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import thelm.jaopca.api.EnumEntryType;
 import thelm.jaopca.api.EnumOreType;
 import thelm.jaopca.api.IItemRequest;
@@ -85,10 +83,10 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 	public static final ItemEntry ESSENCE_ENTRY = new ItemEntry(EnumEntryType.ITEM, "essence", new ModelResourceLocation("jaopca:essence"), BLACKLIST).
 			setOreTypes(EnumOreType.values()).
 			setProperties(ESSENCE_PROPERTIES);
-	public static final ItemEntry SEEDS_ENTRY = new ItemEntry(EnumEntryType.ITEM, "seeds", new ModelResourceLocation("jaopca:seeds#inventory"), BLACKLIST).
+	public static final ItemEntry SEEDS_ENTRY = new ItemEntry(EnumEntryType.ITEM, "mysticalSeeds", new ModelResourceLocation("jaopca:seeds#inventory"), BLACKLIST).
 			setOreTypes(EnumOreType.values()).
 			setProperties(SEEDS_PROPERTIES);
-	public static final ItemEntry CROPS_ENTRY = new ItemEntry(EnumEntryType.BLOCK, "crops", new ModelResourceLocation("jaopca:crops"), BLACKLIST).
+	public static final ItemEntry CROPS_ENTRY = new ItemEntry(EnumEntryType.BLOCK, "mysticalCrops", new ModelResourceLocation("jaopca:crops"), BLACKLIST).
 			setOreTypes(EnumOreType.values()).
 			setProperties(CROPS_PROPERTIES);
 	public static final ItemEntry CRUX_ENTRY = new ItemEntry(EnumEntryType.BLOCK, "crux", new ModelResourceLocation("jaopca:crux#normal"), BLACKLIST).
@@ -101,6 +99,9 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 
 	public static void register() {
 		JAOPCAApi.registerModule(new ModuleMysticalAgriculture());
+		if(Loader.isModLoaded("agricraft")) {
+			JAOPCAApi.registerModule(new ModuleMysticalAgriCraft());
+		}
 	}
 
 	@Override
@@ -197,15 +198,15 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 			OreDictionary.registerOre("essenceTier"+CROP_TIERS.get(entry), Utils.getOreStack("essence", entry, 1));
 		}
 
-		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("seeds")) {
-			OreDictionary.registerOre("seedsTier"+CROP_TIERS.get(entry), Utils.getOreStack("seeds", entry, 1));
+		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("mysticalSeeds")) {
+			OreDictionary.registerOre("seedsTier"+CROP_TIERS.get(entry), Utils.getOreStack("mysticalSeeds", entry, 1));
 		}
 	}
 
 	@Override
 	public void init() {
 		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("essence")) {
-			ReprocessorManager.addRecipe(Utils.getOreStack("essence", entry, 2), Utils.getOreStack("seeds", entry, 1));
+			ReprocessorManager.addRecipe(Utils.getOreStack("essence", entry, 2), Utils.getOreStack("mysticalSeeds", entry, 1));
 
 			Pair<EnumRecipePattern, Integer> recipe = RECIPE_PATTERNS.get(entry);
 			String s = "ingot";
@@ -228,7 +229,7 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 			Utils.addShapedOreRecipe(Utils.getOreStack(s, entry, recipe.getRight()), recipe.getLeft().getRecipePattern("essence"+entry.getOreName()));
 		}
 
-		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("seeds")) {
+		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("mysticalSeeds")) {
 			String s = "ingot";
 			switch(entry.getOreType()) {
 			case DUST:
@@ -241,7 +242,7 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 			default:
 				break;
 			}
-			Utils.addShapedOreRecipe(Utils.getOreStack("seeds", entry, 1), new Object[] {
+			Utils.addShapedOreRecipe(Utils.getOreStack("mysticalSeeds", entry, 1), new Object[] {
 					"MEM",
 					"ESE",
 					"MEM",
@@ -274,6 +275,14 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 					'D', "blockDiamond",
 			});
 		}
+	}
+
+	@Override
+	public List<Pair<String, String>> remaps() {
+		return Lists.<Pair<String, String>>newArrayList(
+				Pair.<String, String>of("seeds", "mysticalSeeds"),
+				Pair.<String, String>of("crops", "mysticalCrops")
+				);
 	}
 
 	public static Object getEssence(int tier) {

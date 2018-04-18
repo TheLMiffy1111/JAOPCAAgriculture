@@ -1,4 +1,4 @@
-package thelm.jaopca.agriculture;
+package thelm.jaopca.agriculture.mysticalagriculture;
 
 import java.util.List;
 
