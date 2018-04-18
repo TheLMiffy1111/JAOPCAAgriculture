@@ -1,4 +1,4 @@
-package thelm.jaopca.agriculture;
+package thelm.jaopca.agriculture.mysticalagriculture;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
