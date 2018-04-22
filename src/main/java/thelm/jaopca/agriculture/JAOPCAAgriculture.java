@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class JAOPCAAgriculture {
 	public static final String MOD_ID = "jaopcaagriculture";
 	public static final String NAME = "JAOPCAAgriculture";
-	public static final String VERSION = "1.11.2-1.1.0.6";
+	public static final String VERSION = "1.11.2-1.1.0.9";
 	@Instance(JAOPCAAgriculture.MOD_ID)
 	public static JAOPCAAgriculture core;
 	public static ModMetadata metadata;
