@@ -62,7 +62,7 @@ public class ItemSeedsBase extends ItemBase implements IPlantable {
 	@Override
 	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
 		if(crops == null) {
-			crops = JAOPCAApi.BLOCKS_TABLE.get("crops", this.getOreEntry().getOreName());
+			crops = JAOPCAApi.BLOCKS_TABLE.get("mysticalCrops", this.getOreEntry().getOreName());
 		}
 		if(crops != null) {
 			return crops.getDefaultState();
@@ -93,6 +93,7 @@ public class ItemSeedsBase extends ItemBase implements IPlantable {
 			break;
 		case 6:
 			tooltip.add(text+TextFormatting.DARK_PURPLE+tier);
+			break;
 		}
 	}
 }

@@ -74,10 +74,7 @@ public class AgriPlantBase implements IAgriPlant, IAgriPlantWithProperty {
 
 	@Override
 	public String getPlantName() {
-		if(I18n.canTranslate(getUnlocalizedPlantName()+'.'+oreEntry.getOreName())) {
-			return I18n.translateToLocal(getUnlocalizedPlantName()+'.'+oreEntry.getOreName());
-		}
-		return String.format(I18n.translateToLocal(getUnlocalizedPlantName()), I18n.canTranslate("jaopca.entry."+oreEntry.getOreName()) ? I18n.translateToLocal("jaopca.entry."+oreEntry.getOreName()) : Utils.toSpaceSeparated(oreEntry.getOreName()));
+		return Utils.smartLocalize(this.getUnlocalizedPlantName(), this.getUnlocalizedPlantName()+".%s", this.getOreEntry());
 	}
 
 	public String getUnlocalizedInformation() {
@@ -86,10 +83,7 @@ public class AgriPlantBase implements IAgriPlant, IAgriPlantWithProperty {
 
 	@Override
 	public String getInformation() {
-		if(I18n.canTranslate(getUnlocalizedInformation()+'.'+oreEntry.getOreName())) {
-			return I18n.translateToLocal(getUnlocalizedInformation()+'.'+oreEntry.getOreName());
-		}
-		return String.format(I18n.translateToLocal(getUnlocalizedInformation()), I18n.canTranslate("jaopca.entry."+oreEntry.getOreName()) ? I18n.translateToLocal("jaopca.entry."+oreEntry.getOreName()) : Utils.toSpaceSeparated(oreEntry.getOreName()));
+		return Utils.smartLocalize(this.getUnlocalizedInformation(), this.getUnlocalizedInformation()+".%s", this.getOreEntry());
 	}
 
 	/*========================================= SEED =======================================*/
@@ -160,6 +154,11 @@ public class AgriPlantBase implements IAgriPlant, IAgriPlantWithProperty {
 		new PlantStats().writeToNBT(tag);
 		stack.setTagCompound(tag);
 		return stack;
+	}
+
+	@Override
+	public String getSeedName() {
+		return this.getSeed().getDisplayName();
 	}
 
 	/*======================================== GROWTH ======================================*/
@@ -360,44 +359,39 @@ public class AgriPlantBase implements IAgriPlant, IAgriPlantWithProperty {
 		return 13/16F;
 	}
 
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	@Override
 	public List<BakedQuad> getPlantQuads(IExtendedBlockState state, int growthStage, EnumFacing direction, Function<ResourceLocation, TextureAtlasSprite> textureToIcon) {
-        if(textureToIcon instanceof ITessellator) {
-        	JAOPCAPlantRenderer.renderPlant((ITessellator)textureToIcon, this.textures.get(growthStage), this.renderType, this.getOreEntry().getColor());
-        }
-        return Collections.<BakedQuad>emptyList();
+		if(textureToIcon instanceof ITessellator) {
+			JAOPCAPlantRenderer.renderPlant((ITessellator)textureToIcon, this.textures.get(growthStage), this.renderType, this.getOreEntry().getColor());
+		}
+		return Collections.<BakedQuad>emptyList();
 	}
 
 	/*========================================= OTHERS =======================================*/
 
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	@Override
 	public RenderMethod getRenderMethod() {
 		return RenderMethod.CUSTOM;
 	}
 
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	@Override
 	public ResourceLocation getSeedTexture() {
 		return TextureMap.LOCATION_MISSING_TEXTURE;
 	}
 
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	@Override
 	public ResourceLocation getPrimaryPlantTexture(int meta) {
 		return new ResourceLocation(this.textures.get(meta).get(0).getLeft());
 	}
 
-    @SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	@Override
 	public ResourceLocation getSecondaryPlantTexture(int meta) {
 		return null;
-	}
-
-	@Override
-	public String getSeedName() {
-		return "";
 	}
 
 	@Override
