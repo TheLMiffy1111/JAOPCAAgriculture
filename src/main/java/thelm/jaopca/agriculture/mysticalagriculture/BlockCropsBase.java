@@ -118,7 +118,7 @@ public class BlockCropsBase extends BlockCrops implements IBlockWithProperty {
 	@Override
 	public Item getSeed() {
 		if(seed == null) {
-			seed = JAOPCAApi.ITEMS_TABLE.get("seeds", this.getOreEntry().getOreName());
+			seed = JAOPCAApi.ITEMS_TABLE.get("mysticalSeeds", this.getOreEntry().getOreName());
 		}
 		return seed;
 	}

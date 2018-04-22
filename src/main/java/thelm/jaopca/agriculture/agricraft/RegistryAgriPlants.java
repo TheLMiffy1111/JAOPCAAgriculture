@@ -6,6 +6,7 @@ import com.agricraft.agricore.core.AgriCore;
 import com.agricraft.agricore.plant.AgriPlant;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Lists;
+import com.infinityraider.agricraft.api.v1.AgriApi;
 import com.infinityraider.agricraft.api.v1.plant.IAgriPlant;
 
 import net.minecraft.util.ResourceLocation;
@@ -64,6 +65,7 @@ public class RegistryAgriPlants {
 						setFormat(condition.formatFunc.apply(ore.getOreType())))).
 				setRenderType(ppt.renderType).
 				setTextures(ppt.textures);
+				AgriApi.getPlantRegistry().add((IAgriPlant)agriPlant);
 				AGRI_PLANTS_TABLE.put(entry.name, ore.getOreName(), (IAgriPlant)agriPlant);
 			}
 			catch(Exception e) {
