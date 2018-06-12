@@ -55,11 +55,11 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 				"Tin", "Bronze", "Zinc", "Brass", "Silver", "Lead", "Steel", "Nickel", "Constantan", "Electrum", "Invar", "Mithril", "Tungsten", "Titanium",
 				"Uranium", "Chromium", "Platinum", "Iridium", "Ruby", "Sapphire", "Peridot", "Amber", "Topaz", "Malachite", "Tanzanite", "Signalum", "Enderium",
 				"Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron", "Soularium",
-				"DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "Manasteel", "Terrasteel", "Osmium", "RefinedGlowstone", "RefinedObsidian",
-				"Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "MeteoricIron", "Desh", "BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz",
-				"Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Draconium", "Yellorium", "CertusQuartz", "Fluix",
-				"ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence", "Inferium", "Prudentium", "Intermedium", "Superium", "Supremium", "Soulium",
-				"Prismarine"
+				"DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "Manasteel", "Terrasteel", "Thaumium", "Void", "Osmium", "RefinedGlowstone",
+				"RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "MeteoricIron", "Desh", "BlackQuartz", "Vinteum", "Chimerite",
+				"BlueTopaz", "Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Amethyst", "Draconium", "Yellorium",
+				"CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence", "Inferium", "Prudentium", "Intermedium", "Superium",
+				"Supremium", "Soulium", "Prismarine"
 				);
 		if(ADDITIONS_LOADED) {
 			Collections.<String>addAll(BLACKLIST, "Insanium", "NetherStar", "DraconiumAwakened");
