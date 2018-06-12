@@ -57,7 +57,7 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 				"Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron", "Soularium",
 				"DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "Manasteel", "Terrasteel", "Osmium", "RefinedGlowstone", "RefinedObsidian",
 				"Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "MeteoricIron", "Desh", "BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz",
-				"Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Draconium", "Yellorium", "CertusQuartz", "Fluix",
+				"Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Amethyst", "Draconium", "Yellorium", "CertusQuartz", "Fluix",
 				"ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence", "Inferium", "Prudentium", "Intermedium", "Superium", "Supremium", "Soulium",
 				"Prismarine"
 				);

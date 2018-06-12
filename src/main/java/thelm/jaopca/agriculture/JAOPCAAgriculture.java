@@ -10,12 +10,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = JAOPCAAgriculture.MOD_ID,
 		name = JAOPCAAgriculture.NAME,
 		version = JAOPCAAgriculture.VERSION,
-		dependencies = "required-after:mysticalagriculture;after:mysticalagradditions;required-before:jaopca@[1.11.2-2.1.6.70,)"
+		dependencies = "required-after:mysticalagriculture;after:mysticalagradditions;required-before:jaopca@[1.11.2-2.1.8.88,)"
 		)
 public class JAOPCAAgriculture {
 	public static final String MOD_ID = "jaopcaagriculture";
 	public static final String NAME = "JAOPCAAgriculture";
-	public static final String VERSION = "1.11.2-1.1.0.9";
+	public static final String VERSION = "1.11.2-1.1.0.12";
 	@Instance(JAOPCAAgriculture.MOD_ID)
 	public static JAOPCAAgriculture core;
 	public static ModMetadata metadata;

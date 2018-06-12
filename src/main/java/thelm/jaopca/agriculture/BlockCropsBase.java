@@ -142,7 +142,7 @@ public class BlockCropsBase extends BlockCrops implements IBlockWithProperty {
 		ArrayList drops = new ArrayList();
 		int age = state.getValue(AGE);
 		Random rand = RANDOM;
-		int essence = 1;
+		int essence = 0;
 		int fertilizer = 0;
 		int seeds = 1;
 
