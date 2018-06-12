@@ -50,14 +50,15 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 	static {
 		BLACKLIST = Lists.<String>newArrayList(
 				"Coal", "Iron", "Quartz", "Glowstone", "Redstone", "Gold", "Lapis", "Diamond", "Emerald", "Silicon", "Sulfur", "Aluminium", "Copper", "Saltpeter",
-				"Tin", "Bronze", "Zinc", "Brass", "Silver", "Lead", "Steel", "Nickel", "Constantan", "Electrum", "Invar", "Mithril", "Tungsten", "Titanium",
-				"Uranium", "Chromium", "Platinum", "Iridium", "Ruby", "Sapphire", "Peridot", "Amber", "Topaz", "Malachite", "Tanzanite", "Signalum", "Enderium",
-				"Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron", "Soularium",
-				"DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "Manasteel", "Terrasteel", "Dawnstone", "Osmium", "RefinedGlowstone",
-				"RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "Steeleaf", "Ironwood", "Knightmetal", "Fiery", "MeteoricIron",
-				"Desh", "BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz", "Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite",
-				"Draconium", "Yellorium", "CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence", "Inferium", "Prudentium",
-				"Intermedium", "Superium", "Supremium", "Soulium", "Prismarine"
+				"Tin", "Bronze", "Zinc", "Brass", "Silver", "Lead", "Graphite", "Steel", "Nickel", "Constantan", "Electrum", "Invar", "Mithril", "Tungsten",
+				"Titanium", "Uranium", "Chromium", "Platinum", "Iridium", "Ruby", "Sapphire", "Peridot", "Amber", "Topaz", "Malachite", "Tanzanite", "Signalum",
+				"Enderium", "Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron",
+				"Soularium", "DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "EndSteel", "Manasteel", "Terrasteel", "Thaumium", "Void",
+				"Dawnstone", "Osmium", "RefinedGlowstone", "RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "Steeleaf",
+				"Ironwood", "Knightmetal", "Fiery", "MeteoricIron", "Desh", "Syrmorite", "Octine", "Valonite", "Thorium", "Boron", "Lithium", "Magnesium",
+				"BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz", "Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Dark",
+				"CompressedIron", "Amethyst", "Draconium", "Yellorium", "CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence",
+				"Inferium", "Prudentium", "Intermedium", "Superium", "Supremium", "Soulium", "Prismarine"
 				);
 		if(ADDITIONS_LOADED) {
 			Collections.<String>addAll(BLACKLIST, "Insanium", "NetherStar", "DraconiumAwakened");
