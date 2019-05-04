@@ -88,7 +88,7 @@ dependencies {
         transitive = false
     }
     deobfCompile "cofh:RedstoneFlux:1.12-2.0.1.2:universal"
-    deobfCompile "codechicken:CodeChickenLib:1.12.2-3.1.5.331:universal"
+    deobfCompile "codechicken:CodeChickenLib:1.12.2-3.1.7.340:universal"
     deobfCompile("cofh:CoFHCore:1.12.2-4.4.0.10:universal") {
         transitive = false
     }
@@ -110,7 +110,7 @@ dependencies {
         transitive = false
     }
     deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.0.9.285"
-    deobfCompile("exnihilocreatio:exnihilocreatio:1.12-0.1.7.69") {
+    deobfCompile("exnihilocreatio:exnihilocreatio:1.12-0.3.0.7") {
         transitive = false
     }
     deobfCompile "com.infinityraider.agricraft:AgriCraft:2.12.0-1.12.0-a4"
