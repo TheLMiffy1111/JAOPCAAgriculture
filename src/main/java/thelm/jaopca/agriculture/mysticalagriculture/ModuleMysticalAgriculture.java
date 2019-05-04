@@ -7,8 +7,10 @@ import java.util.List;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import com.blakebr0.mysticalagradditions.lib.CropType.Type;
 import com.blakebr0.mysticalagriculture.crafting.ReprocessorManager;
 import com.blakebr0.mysticalagriculture.items.ModItems;
+import com.blakebr0.mysticalagriculture.lib.CropType;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -48,20 +50,14 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 	public static final ArrayList<String> BLACKLIST;
 
 	static {
-		BLACKLIST = Lists.<String>newArrayList(
-				"Coal", "Iron", "Quartz", "Glowstone", "Redstone", "Gold", "Lapis", "Diamond", "Emerald", "Silicon", "Sulfur", "Aluminium", "Copper", "Saltpeter",
-				"Tin", "Bronze", "Zinc", "Brass", "Silver", "Lead", "Graphite", "Steel", "Nickel", "Constantan", "Electrum", "Invar", "Mithril", "Tungsten",
-				"Titanium", "Uranium", "Chromium", "Platinum", "Iridium", "Ruby", "Sapphire", "Peridot", "Amber", "Topaz", "Malachite", "Tanzanite", "Signalum",
-				"Enderium", "Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron",
-				"Soularium", "DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "EndSteel", "Manasteel", "Terrasteel", "Thaumium", "Void",
-				"Dawnstone", "Osmium", "RefinedGlowstone", "RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "Steeleaf",
-				"Ironwood", "Knightmetal", "Fiery", "MeteoricIron", "Desh", "Syrmorite", "Octine", "Valonite", "Thorium", "Boron", "Lithium", "Magnesium",
-				"BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz", "Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Dark",
-				"CompressedIron", "Amethyst", "Draconium", "Yellorium", "CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence",
-				"Inferium", "Prudentium", "Intermedium", "Superium", "Supremium", "Soulium", "Prismarine"
-				);
+		BLACKLIST = Lists.<String>newArrayList("Quartz", "Lapis", "Aluminium", "Niter", "QuartzBlack", "AstralStarmetal", "Dark", "Amethyst");//This Blacklist is needed because without it it would duplicate this Crops.
+		for(CropType.Type t:CropType.Type.values()) {
+			BLACKLIST.add(t.getName().replaceAll("_", ""));
+		}
 		if(ADDITIONS_LOADED) {
-			Collections.<String>addAll(BLACKLIST, "Insanium", "NetherStar", "DraconiumAwakened");
+			for(Type t:Type.values()) {
+				BLACKLIST.add(t.getName().replaceAll("_", ""));
+			}
 		}
 	}
 
