@@ -9,6 +9,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.blakebr0.mysticalagriculture.crafting.ReprocessorManager;
 import com.blakebr0.mysticalagriculture.items.ModItems;
+import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -52,16 +53,17 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 				"Coal", "Iron", "Quartz", "Glowstone", "Redstone", "Gold", "Lapis", "Diamond", "Emerald", "Silicon", "Sulfur", "Aluminium", "Copper", "Saltpeter",
 				"Tin", "Bronze", "Zinc", "Brass", "Silver", "Lead", "Graphite", "Steel", "Nickel", "Constantan", "Electrum", "Invar", "Mithril", "Tungsten",
 				"Titanium", "Uranium", "Chromium", "Platinum", "Iridium", "Ruby", "Sapphire", "Peridot", "Amber", "Topaz", "Malachite", "Tanzanite", "Signalum",
-				"Enderium", "Lumium", "AluminiumBrass", "Knightslime", "Cobalt", "Ardite", "Manyullyn", "ElecticalSteel", "RedstoneAlloy", "ConductiveIron",
-				"Soularium", "DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "EndSteel", "Manasteel", "Terrasteel", "Thaumium", "Void",
-				"Dawnstone", "Osmium", "RefinedGlowstone", "RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine", "Apatite", "Steeleaf",
-				"Ironwood", "Knightmetal", "Fiery", "MeteoricIron", "Desh", "Syrmorite", "Octine", "Valonite", "Thorium", "Boron", "Lithium", "Magnesium",
-				"BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz", "Moonstone", "Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Dark",
-				"CompressedIron", "Amethyst", "Draconium", "Yellorium", "CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence",
-				"Inferium", "Prudentium", "Intermedium", "Superium", "Supremium", "Soulium", "Prismarine"
+				"Lumium", "Enderium", "ElectrumFlux", "HOPGraphite", "AluminiumBrass", "Knightslime", "Ardite", "Cobalt", "Manyullyn", "Bedrock", "ElecticalSteel",
+				"RedstoneAlloy", "ConductiveIron", "Soularium", "DarkSteel", "PulsatingIron", "EnergeticAlloy", "VibrantAlloy", "EndSteel", "Manasteel", "Terrasteel",
+				"Quicksilver", "Thaumium", "Void", "Dawnstone", "Osmium", "RefinedGlowstone", "RefinedObsidian", "Aquarium", "Coldiron", "Starsteel", "Adamantine",
+				"Apatite", "Electrotine", "Alumite", "Steeleaf", "Ironwood", "Knightmetal", "Fiery", "MeteoricIron", "Desh", "Coralium", "Abyssalnite", "Dreadium",
+				"Syrmorite", "Octine", "Valonite", "Thorium", "Boron", "Lithium", "Magnesium", "BlackQuartz", "Vinteum", "Chimerite", "BlueTopaz", "Moonstone",
+				"Sunstone", "Aquamarine", "Starmetal", "RockCrystal", "EnderBiotite", "Dilithium", "Tritanium", "Jade", "Dark", "CompressedIron", "Amethyst",
+				"Draconium", "Yellorium", "CertusQuartz", "Fluix", "ChargedCertusQuartz", "QuartzEnrichedIron", "BaseEssence", "Inferium", "Prudentium", "Intermedium",
+				"Superium", "Supremium", "Soulium", "Prismarine"
 				);
 		if(ADDITIONS_LOADED) {
-			Collections.<String>addAll(BLACKLIST, "Insanium", "NetherStar", "DraconiumAwakened");
+			Collections.<String>addAll(BLACKLIST, "Insanium", "NetherStar", "DraconiumAwakened", "Neutronium");
 		}
 	}
 

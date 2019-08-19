@@ -43,7 +43,7 @@ public class BlockCropsBase extends BlockCrops implements IBlockWithProperty {
 	public BlockCropsBase(Material material, MapColor mapColor, ItemEntry itemEntry, IOreEntry oreEntry) {
 		super();
 		setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0));
-		setUnlocalizedName("jaopca."+itemEntry.name);
+		setTranslationKey("jaopca."+itemEntry.name);
 		setRegistryName("jaopca:block_"+itemEntry.name+oreEntry.getOreName());
 		this.oreEntry = oreEntry;
 		this.itemEntry = itemEntry;
