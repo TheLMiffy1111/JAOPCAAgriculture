@@ -9,7 +9,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.blakebr0.mysticalagriculture.crafting.ReprocessorManager;
 import com.blakebr0.mysticalagriculture.items.ModItems;
-import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -230,6 +229,11 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 				}
 			}
 			Utils.addShapedOreRecipe(Utils.getOreStack(s, entry, recipe.getRight()), recipe.getLeft().getRecipePattern("essence"+entry.getOreName()));
+			if(Loader.isModLoaded("thermalexpansion")) {
+				if(CROP_TIERS.get(entry) <= 5) {
+					ThermalExpansionHandler.addInsolatorRecipes(Utils.getOreStack("mysticalSeeds", entry, 1), Utils.getOreStack("essence", entry, 1));
+				}
+			}
 		}
 
 		for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("mysticalSeeds")) {
@@ -277,6 +281,18 @@ public class ModuleMysticalAgriculture extends ModuleBase {
 					'S', CRUX_SPECIALS.get(entry),
 					'D', "blockDiamond",
 			});
+		}
+	}
+
+	@Override
+	public void postInit() {
+		if(Loader.isModLoaded("immersiveengineering")) {
+			for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("essence")) {
+				if(CROP_TIERS.get(entry) <= 5) {
+					ImmersiveEngineeringHandler.registerBelljarCrop(Utils.getOreStack("mysticalSeeds", entry, 1), Utils.getOreStack("essence", entry, 1),
+							JAOPCAApi.BLOCKS_TABLE.get("mysticalCrops", entry.getOreName()));
+				}
+			}
 		}
 	}
 
