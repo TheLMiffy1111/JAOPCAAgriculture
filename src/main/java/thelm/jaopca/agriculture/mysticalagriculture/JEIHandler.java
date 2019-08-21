@@ -30,7 +30,7 @@ public class JEIHandler implements IModPlugin {
 
 	public static List<IRecipeWrapper> getExtraRecipes() {
 		ArrayList<IRecipeWrapper> ret = Lists.<IRecipeWrapper>newArrayList();
-		if(ModuleMysticalAgriculture.ADDITIONS_LOADED) {
+		if(ModuleMysticalAgriculture.ADDITIONS_LOADED && WRAPPER_CONSTRUCTOR != null) {
 			for(IOreEntry entry : JAOPCAApi.ENTRY_NAME_TO_ORES_MAP.get("crux")) {
 				ItemStack input = Utils.getOreStack("seeds", entry, 1);
 				ItemStack crop = Utils.getOreStack("crops", entry, 1);
@@ -54,7 +54,7 @@ public class JEIHandler implements IModPlugin {
 				@Override
 				public Constructor<? extends IRecipeWrapper> call() {
 					try {
-						return (Constructor<? extends IRecipeWrapper>)Class.forName("com.blakebr0.mysticalagradditions.jei.Tier6CropWrapper").getConstructor(ItemStack.class, ItemStack.class, ItemStack.class, ItemStack.class);
+						return (Constructor<? extends IRecipeWrapper>)Class.forName("com.blakebr0.mysticalagradditions.compat.jei.Tier6CropWrapper").getConstructor(ItemStack.class, ItemStack.class, ItemStack.class, ItemStack.class);
 					}
 					catch(ClassNotFoundException | NoSuchMethodException | SecurityException e) {
 						e.printStackTrace();
