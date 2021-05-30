@@ -1,61 +1,70 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven {
+            url = "https://maven.minecraftforge.net/"
+        }
+        maven {
+            url = "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url = "https://jitpack.io/"
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
+		classpath "com.wynprice.cursemaven:CurseMaven:2.1.5"
+		//classpath "com.github.Wyn-Price:CurseMaven:f0d58155e6"
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
+
+apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: "com.wynprice.cursemaven"
 
 repositories {
     jcenter()
     maven {
-        url = "http://maven.blamejared.com"
+        url = "https://maven.blamejared.com/"
     }
     maven {
-        url = "http://dvs1.progwml6.com/files/maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
-        url = "http://tehnut.info/maven"
+        url = "https://maven.amadornes.com/"
     }
     maven {
-        url = "http://maven.amadornes.com/"
+        url = "https://maven.ic2.player.to/"
     }
     maven {
-        url = "http://maven.ic2.player.to/"
-    }
-    maven {
-        url = "http://maven.tterrag.com/"
+        url = "https://maven.tterrag.com/"
     }
     maven {
         url = "https://maven.chaosfield.at/"
     }
     maven {
-        url = "http://maven.modmuss50.me/"
+        url = "https://maven.modmuss50.me/"
     }
     maven {
-        url = "http://maven.covers1624.net/"
+        url = "https://maven.covers1624.net/"
     }
     maven {
-        url = "https://dl.bintray.com/shinoow/maven/"
+        url = "https://maven.shadowfacts.net/"
     }
     maven {
-        url = "http://maven.shadowfacts.net/"
+        url = "https://maven.mcmoddev.com/"
     }
     maven {
-        url = "http://maven.thiakil.com/"
+        url = "https://maven.thiakil.com/"
     }
     maven {
-        url = "https://minecraft.curseforge.com/api/maven/"
+        url = "https://www.mod-buildcraft.com/maven/"
     }
     maven {
-        url = "https://modmaven.k-4u.nl/" 
+        url = "https://modmaven.dev/"
     }
 }
 
-version = "1.12.2-1.2.1.16"
+version = "1.12.2-1.2.1.17"
 group= "thelm.jaopca.agriculture"
 archivesBaseName = "JAOPCAAgriculture"
 
@@ -73,20 +82,8 @@ minecraft {
 
 dependencies {
     deobfCompile "mezz.jei:jei_1.12.2:4.15.0.273"
-    deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.49"
-    deobfCompile "slimeknights:TConstruct:1.12.2-2.12.0.135"
-    deobfCompile "net.industrial-craft:industrialcraft-2:2.8.109-ex112"
-    deobfCompile "blusunrize:ImmersiveEngineering:0.12-88-506"
     deobfCompile "MCMultiPart2:MCMultiPart-exp:2.2.2_37"
-    deobfCompile("RebornCore:RebornCore-1.12.2:3.12.0.378:universal") {
-        transitive = false
-    }
-    deobfCompile("TechReborn:TechReborn-1.12.2:2.19.0.870:universal") {
-        transitive = false
-    }
-    deobfCompile("TechReborn:TechReborn-ModCompatibility-1.12.2:1.1.0.5:universal") {
-        transitive = false
-    }
+    deobfCompile "blusunrize:ImmersiveEngineering:0.12-88-506"
     deobfCompile "codechicken:CodeChickenLib:1.12.2-3.2.3.357:universal"
     deobfCompile "cofh:RedstoneFlux:1.12-2.1.0.6:universal"
     deobfCompile("cofh:CoFHCore:1.12.2-4.6.3.27:universal") {
@@ -104,27 +101,21 @@ dependencies {
     deobfCompile("cofh:ThermalDynamics:1.12.2-2.5.5.21:universal") {
         transitive = false
     }
-    deobfCompile "com.shinoow.abyssalcraft:AbyssalCraft:1.12.2-1.9.4.9"
-    deobfCompile "net.shadowfacts:Forgelin:1.6.0"
+    deobfCompile "com.shinoow.abyssalcraft:AbyssalCraft:1.12.2-1.10.3"
     deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.2.397"
-    deobfCompile("exnihilocreatio:exnihilocreatio:1.12-0.3.0.7") {
-        transitive = false
-    }
-    deobfCompile("appeng:appliedenergistics2:rv6-stable-6") {
-        transitive = false
-    }
-    deobfCompile "com.infinityraider.agricraft:AgriCraft:2.12.0-1.12.0-a6"
 
-    deobfCompile "jaopca:JAOPCA:1.12.2:2.2.8.103"
-    deobfCompile "wrapup:WrapUp:1.12:1.1.3"
+    deobfCompile "curse.maven:wrapup:2486198"
+    deobfCompile "curse.maven:jaopca:3294077"
 
-    deobfCompile "cucumber:Cucumber:1.12.2:1.1.3"
-    deobfCompile "infinitylib:infinitylib:1.12.0"
-    deobfCompile "mekanism:Mekanism:1.12.2:9.6.7.360"
-    deobfCompile "baubles:Baubles:1.12:1.5.2"
-    deobfCompile "thaumcraft:Thaumcraft:1.12.2:6.1.BETA26"
-    deobfCompile "mystical-agradditions:MysticalAgradditions:1.12.2:1.3.1"
-    deobfCompile "mystical-agriculture:MysticalAgriculture:1.12.2:1.7.3"
+    deobfCompile "curse.maven:infinitylib:3317119"
+    deobfCompile "curse.maven:agricraft:3317747"
+    deobfCompile "curse.maven:cucumber:2645867"
+    deobfCompile "curse.maven:mystical-agriculture:2680943"
+    deobfCompile "curse.maven:mystical-agradditions:2671242"
+    deobfCompile "curse.maven:mekanism:2835175"
+    deobfCompile "curse.maven:baubles:2518667"
+    deobfCompile "curse.maven:thaumcraft:2629023"
+    deobfCompile "curse.maven:applied-energistics-2:2747063"
 }
 
 processResources

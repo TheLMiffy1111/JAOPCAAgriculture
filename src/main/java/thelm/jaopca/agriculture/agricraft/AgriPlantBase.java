@@ -160,6 +160,11 @@ public class AgriPlantBase implements IAgriPlant, IAgriPlantWithProperty {
 		return this.getSeed().getDisplayName();
 	}
 
+	@Override
+	public int getTier() {
+		return 1;
+	}
+
 	/*======================================== GROWTH ======================================*/
 
 	protected double growthChance = 0.9D;
